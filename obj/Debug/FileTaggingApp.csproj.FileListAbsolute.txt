@@ -1,0 +1,11 @@
+E:\VSCODE_PROJECTS\FileTaggingApp\bin\Debug\FileTaggingApp.exe.config
+E:\VSCODE_PROJECTS\FileTaggingApp\bin\Debug\FileTaggingApp.exe
+E:\VSCODE_PROJECTS\FileTaggingApp\bin\Debug\FileTaggingApp.pdb
+E:\VSCODE_PROJECTS\FileTaggingApp\obj\Debug\FileTaggingApp.csproj.AssemblyReference.cache
+E:\VSCODE_PROJECTS\FileTaggingApp\obj\Debug\FileTaggingApp.csproj.SuggestedBindingRedirects.cache
+E:\VSCODE_PROJECTS\FileTaggingApp\obj\Debug\FileTaggingApp.Form1.resources
+E:\VSCODE_PROJECTS\FileTaggingApp\obj\Debug\FileTaggingApp.Properties.Resources.resources
+E:\VSCODE_PROJECTS\FileTaggingApp\obj\Debug\FileTaggingApp.csproj.GenerateResource.cache
+E:\VSCODE_PROJECTS\FileTaggingApp\obj\Debug\FileTaggingApp.csproj.CoreCompileInputs.cache
+E:\VSCODE_PROJECTS\FileTaggingApp\obj\Debug\FileTaggingApp.exe
+E:\VSCODE_PROJECTS\FileTaggingApp\obj\Debug\FileTaggingApp.pdb
