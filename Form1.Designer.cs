@@ -34,11 +34,6 @@
             this.gobtn = new System.Windows.Forms.Button();
             this.filepathtextbox = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.filenamelabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.filetypelabel = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addTagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tagName1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +41,11 @@
             this.tagName2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createCustomTagsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeAllTagsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.filenamelabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.filetypelabel = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,7 @@
             this.filepathtextbox.Name = "filepathtextbox";
             this.filepathtextbox.Size = new System.Drawing.Size(600, 22);
             this.filepathtextbox.TabIndex = 2;
+            this.filepathtextbox.TextChanged += new System.EventHandler(this.filepathtextbox_TextChanged);
             // 
             // listView1
             // 
@@ -90,6 +91,59 @@
             this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addTagToolStripMenuItem,
+            this.removeAllTagsToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(187, 52);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // addTagToolStripMenuItem
+            // 
+            this.addTagToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tagName1ToolStripMenuItem,
+            this.internshipToolStripMenuItem,
+            this.tagName2ToolStripMenuItem,
+            this.createCustomTagsToolStripMenuItem});
+            this.addTagToolStripMenuItem.Name = "addTagToolStripMenuItem";
+            this.addTagToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.addTagToolStripMenuItem.Text = "Add Tag";
+            this.addTagToolStripMenuItem.Click += new System.EventHandler(this.addTagToolStripMenuItem_Click);
+            // 
+            // tagName1ToolStripMenuItem
+            // 
+            this.tagName1ToolStripMenuItem.Name = "tagName1ToolStripMenuItem";
+            this.tagName1ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tagName1ToolStripMenuItem.Text = "Work";
+            this.tagName1ToolStripMenuItem.Click += new System.EventHandler(this.tagName1ToolStripMenuItem_Click);
+            // 
+            // internshipToolStripMenuItem
+            // 
+            this.internshipToolStripMenuItem.Name = "internshipToolStripMenuItem";
+            this.internshipToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.internshipToolStripMenuItem.Text = "Internship";
+            // 
+            // tagName2ToolStripMenuItem
+            // 
+            this.tagName2ToolStripMenuItem.Name = "tagName2ToolStripMenuItem";
+            this.tagName2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tagName2ToolStripMenuItem.Text = "College";
+            // 
+            // createCustomTagsToolStripMenuItem
+            // 
+            this.createCustomTagsToolStripMenuItem.Name = "createCustomTagsToolStripMenuItem";
+            this.createCustomTagsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.createCustomTagsToolStripMenuItem.Text = "Create Custom Tags";
+            // 
+            // removeAllTagsToolStripMenuItem
+            // 
+            this.removeAllTagsToolStripMenuItem.Name = "removeAllTagsToolStripMenuItem";
+            this.removeAllTagsToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.removeAllTagsToolStripMenuItem.Text = "Remove All tags";
             // 
             // imageList1
             // 
@@ -140,59 +194,6 @@
             this.filetypelabel.Size = new System.Drawing.Size(11, 16);
             this.filetypelabel.TabIndex = 7;
             this.filetypelabel.Text = "-";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addTagToolStripMenuItem,
-            this.removeAllTagsToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(187, 52);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
-            // addTagToolStripMenuItem
-            // 
-            this.addTagToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tagName1ToolStripMenuItem,
-            this.internshipToolStripMenuItem,
-            this.tagName2ToolStripMenuItem,
-            this.createCustomTagsToolStripMenuItem});
-            this.addTagToolStripMenuItem.Name = "addTagToolStripMenuItem";
-            this.addTagToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
-            this.addTagToolStripMenuItem.Text = "Add Tag";
-            this.addTagToolStripMenuItem.Click += new System.EventHandler(this.addTagToolStripMenuItem_Click);
-            // 
-            // tagName1ToolStripMenuItem
-            // 
-            this.tagName1ToolStripMenuItem.Name = "tagName1ToolStripMenuItem";
-            this.tagName1ToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
-            this.tagName1ToolStripMenuItem.Text = "Work";
-            this.tagName1ToolStripMenuItem.Click += new System.EventHandler(this.tagName1ToolStripMenuItem_Click);
-            // 
-            // internshipToolStripMenuItem
-            // 
-            this.internshipToolStripMenuItem.Name = "internshipToolStripMenuItem";
-            this.internshipToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
-            this.internshipToolStripMenuItem.Text = "Internship";
-            // 
-            // tagName2ToolStripMenuItem
-            // 
-            this.tagName2ToolStripMenuItem.Name = "tagName2ToolStripMenuItem";
-            this.tagName2ToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
-            this.tagName2ToolStripMenuItem.Text = "College";
-            // 
-            // createCustomTagsToolStripMenuItem
-            // 
-            this.createCustomTagsToolStripMenuItem.Name = "createCustomTagsToolStripMenuItem";
-            this.createCustomTagsToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
-            this.createCustomTagsToolStripMenuItem.Text = "Create Custom Tags";
-            // 
-            // removeAllTagsToolStripMenuItem
-            // 
-            this.removeAllTagsToolStripMenuItem.Name = "removeAllTagsToolStripMenuItem";
-            this.removeAllTagsToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
-            this.removeAllTagsToolStripMenuItem.Text = "Remove All tags";
             // 
             // Form1
             // 

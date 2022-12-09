@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using System.Runtime.InteropServices;
 
 namespace FileTaggingApp
 {
@@ -201,7 +203,9 @@ namespace FileTaggingApp
             if (isFile)
             {
                 FileInfo f = new FileInfo(currentFilePath);
-             
+                ulong fid = ApproachB(currentFilePath); // file id here
+                
+                
             }
             else
             {
@@ -219,6 +223,26 @@ namespace FileTaggingApp
         {
 
 
+        }
+
+        private void filepathtextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        public ulong ApproachB(string currentfilePath)
+        {
+            WinAPI.BY_HANDLE_FILE_INFORMATION objectFileInfo = new WinAPI.BY_HANDLE_FILE_INFORMATION();
+
+            FileInfo fi = new FileInfo(currentfilePath);
+            FileStream fs = fi.Open(FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+
+            WinAPI.GetFileInformationByHandle(fs.Handle, out objectFileInfo);
+
+            fs.Close();
+
+            ulong fileIndex = ((ulong)objectFileInfo.FileIndexHigh << 32) + (ulong)objectFileInfo.FileIndexLow;
+
+            return fileIndex;
         }
     }
 }
